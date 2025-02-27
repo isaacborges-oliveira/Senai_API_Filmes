@@ -80,14 +80,14 @@
   },
   {
     "ContainingType": "api_filmes_senai.Controllers.FilmeController",
-    "Method": "ListarPorGenero",
-    "RelativePath": "api/Filme/genero/{idGenero}",
+    "Method": "GetByGenero",
+    "RelativePath": "api/Filme/ListarPorGenero/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "idGenero",
+        "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -168,6 +168,22 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api_filmes_senai.Controllers.UsuarioController",
+    "Method": "Post",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "api_filmes_senai.Domains.Usuario",
         "IsRequired": true
       }
     ],

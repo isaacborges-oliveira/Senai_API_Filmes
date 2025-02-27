@@ -128,7 +128,19 @@ namespace api_filmes_senai.Repositories
         }
         public List<Filme> ListarPorGenero(Guid idGenero)
         {
-            return _context.Filme.Where(f => f.IdGenero == idGenero).ToList();
+            try
+            {
+                List<Filme> listaDeFilmes = _context.Filme
+                    .Include(g => g.Genero)
+                    .Where(f =>  f.IdGenero == idGenero)
+                    .ToList();
+                return listaDeFilmes;   
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
     }

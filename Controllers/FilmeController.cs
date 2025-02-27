@@ -1,4 +1,5 @@
-﻿using api_filmes_senai.Domains;
+﻿using System.Collections.Generic;
+using api_filmes_senai.Domains;
 using api_filmes_senai.Interfaces;
 using api_filmes_senai.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -93,17 +94,19 @@ namespace api_filmes_senai.Controllers
 
             }
         }
-        [HttpGet("genero/{idGenero}")]
-        public IActionResult ListarPorGenero(Guid idGenero)
+        [HttpGet("ListarPorGenero/{id}")]
+        public IActionResult GetByGenero(Guid id)
         {
-            var filmes = _filmeRepository.ListarPorGenero(idGenero);
-
-            if (filmes == null || !filmes.Any())  
+            try
             {
-                return NotFound(new { mensagem = "Nenhum filme encontrado para este gênero." });
+                List<Filme> listaDeFilmePorGenero = _filmeRepository.ListarPorGenero(id);
+                return Ok (listaDeFilmePorGenero);
             }
-
-            return Ok(filmes);
+            catch (Exception e)
+            {
+                return BadRequest();
+             
+            }
         }
 
 
