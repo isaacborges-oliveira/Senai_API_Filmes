@@ -61,10 +61,12 @@
         "tags": [
           "Filme"
         ],
+        "summary": "Endpoint para nuscar um Genero pelo seu id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "Id do genero buscado",
             "required": true,
             "schema": {
               "type": "string",
@@ -211,10 +213,12 @@
         "tags": [
           "Genero"
         ],
+        "summary": "Endpoint para nuscar um Genero pelo seu id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "Id do genero buscado",
             "required": true,
             "schema": {
               "type": "string",
@@ -424,6 +428,7 @@
           },
           "idGenero": {
             "type": "string",
+            "description": "Referencia da tabela de Genero",
             "format": "uuid"
           },
           "genero": {
@@ -496,6 +501,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Value: Bearer TokenJWT ",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

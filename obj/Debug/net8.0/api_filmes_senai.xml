@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api_filmes_senai</name>
+    </assembly>
+    <members>
+        <member name="P:api_filmes_senai.Context.Filmes_Context.Genero">
+            <summary>
+            Define que as classes se transformarao em tabelas no BD
+            </summary>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.FilmeController.GetById(System.Guid)">
+            <summary>
+            Endpoint para nuscar um Genero pelo seu id
+            </summary>
+            <param name="id">Id do genero buscado</param>
+            <returns>Genero Buscado</returns>
+        </member>
+        <member name="M:api_filmes_senai.Controllers.GeneroController.GetById(System.Guid)">
+            <summary>
+            Endpoint para nuscar um Genero pelo seu id
+            </summary>
+            <param name="id">Id do genero buscado</param>
+            <returns>Genero Buscado</returns>
+        </member>
+        <member name="P:api_filmes_senai.Domains.Filme.IdGenero">
+            <summary>
+            Referencia da tabela de Genero
+            </summary>
+        </member>
+        <member name="T:api_filmes_senai.Interfaces.IGeneroRepository">
+            <summary>
+            Interface para Genero: Contrato
+            toda classe que herder (Implementar) essa interface,deverá 
+            implemenmtar todo os Métodos definidos aqui dentro 
+            </summary>
+        </member>
+        <member name="T:api_filmes_senai.Migrations.Db">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:api_filmes_senai.Migrations.Db_Filmes_v2">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes_v2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes_v2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api_filmes_senai.Migrations.Db_Filmes_v2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:api_filmes_senai.Repositories.GeneroRepository">
+            <summary>
+            Classe que vai implementar a interface IGeneroRepository
+            Ou seja vamos implementar os métodos, toda a lógica dos métodos
+            </summary>
+        </member>
+        <member name="M:api_filmes_senai.Repositories.GeneroRepository.#ctor(api_filmes_senai.Context.Filmes_Context)">
+            <summary>
+            Contrutor do repositorio 
+            Aqui toda vez que o contrutor for chamado ,
+            os dados do contexto estarão disponiveis
+            </summary>
+            <param name="contexto"></param>
+        </member>
+    </members>
+</doc>

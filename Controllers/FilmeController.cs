@@ -48,7 +48,15 @@ namespace api_filmes_senai.Controllers
 
             }
         }
-        [HttpGet("BuscarPorId/{id}")]
+
+
+        /// <summary>
+        /// Endpoint para nuscar um Genero pelo seu id
+        /// </summary>
+        /// <param name="id">Id do genero buscado</param>
+        /// <returns>Genero Buscado</returns>
+
+        [HttpGet ("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
             try
